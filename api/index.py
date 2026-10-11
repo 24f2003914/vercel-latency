@@ -60,3 +60,13 @@ def calculate_latency(request: LatencyRequest):
         }
 
     return result
+
+
+from starlette.middleware.cors import CORSMiddleware as GlobalCORSMiddleware
+
+app = GlobalCORSMiddleware(
+    app,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
